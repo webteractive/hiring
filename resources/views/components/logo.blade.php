@@ -1,0 +1,1 @@
+<x-icon-webteractive class="fill-current inline-block {{ $class ?? '' }}" />
