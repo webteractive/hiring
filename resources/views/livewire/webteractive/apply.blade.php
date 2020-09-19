@@ -1,5 +1,5 @@
 <x-job-layout>
-    <div class="pb-12 px-4 sm:lg-0">
+    <div class="pb-12 px-6 sm:lg-0">
         @foreach ($this->jobs as $job)
             <div id="{{ Str::slug($job['title']) }}" class="py-8">
                 <div class="container mx-auto">
@@ -47,8 +47,8 @@
     </div>
 
     @if ($shown)
-        <div class="bg-black bg-opacity-25 fixed inset-0 flex items-center justify-center z-50">
-            <div class="relative bg-white p-6 shadow rounded max-h-full overflow-y-auto" style="width: 980px;">
+        <div class="bg-black bg-opacity-25 fixed inset-0 md:flex md:items-center md:justify-center z-50">
+            <div class="relative bg-white p-6 shadow rounded max-h-full overflow-y-auto w-full md:w-980">
                 <form wire:submit.prevent="submit">
                     <h3 class="font-bold text-2xl bg-white">{{ __('Applying for ' . $position . ' position') }}</h3>
                     
@@ -66,8 +66,8 @@
                         </div>
                     @endif
 
-                    <div class="flex mt-8">
-                        <div class="w-1/2 mr-2">
+                    <div class="md:flex mt-8">
+                        <div class="md:w-1/2 md:mr-2">
                             <x-field-wrapper
                                 required
                                 for="name"
@@ -82,7 +82,7 @@
                             </x-field-wrapper>
                         </div>
 
-                        <div class="w-1/2 ml-2">
+                        <div class="md:w-1/2 md:ml-2">
                             <x-field-wrapper
                                 required
                                 for="email"

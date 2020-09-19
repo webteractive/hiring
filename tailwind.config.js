@@ -6,6 +6,7 @@ module.exports = {
             fontFamily: {
                 sintony: ['Sintony', 'sans-serif'],
             },
+
             fontSize: {
                 '7xl': '5rem',
                 '8xl': '6rem',
@@ -17,8 +18,24 @@ module.exports = {
                 '14xl': '12rem',
             },
 
+            height: {
+                '980': '980px',
+                '1024': '1024px',
+                '1280': '1280px',
+                '1440': '1440px',
+            },
+
+            width: {
+                '980': '980px'
+            },
+
+            inset: {
+                '-380': '-380px'
+            },
+
             minHeight: {
-                '50vh': '50vh'
+                '50vh': '50vh',
+                '75vh': '75vh'
             },
 
             colors: {
