@@ -66,6 +66,8 @@ module.exports = {
             './resources/**/*.php',
             './resources/**/*.vue',
             './resources/**/*.twig',
+            './storage/framework/views/*.php',
+            './resources/views/**/*.blade.php'
         ],
         options: {
             defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
