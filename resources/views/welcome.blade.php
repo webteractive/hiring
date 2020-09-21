@@ -8,10 +8,11 @@
         <meta name="description" content="Looking for a QA Tester and Graphics Designer">
         <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
         <link rel="alternate icon" href="/favicon.ico">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap" rel="stylesheet">
-        <link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.4/trix.min.css" rel="stylesheet" >
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap">
+        <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.4/trix.min.css">
         <livewire:styles />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.4/trix.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
