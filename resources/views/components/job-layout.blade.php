@@ -31,8 +31,8 @@
                     <div class="text-some-gray">
                         <h2 class="tracking-wide font-sintony font-bold text-4xl text-white">{{ __('Visit Us') }}</h2>
                         <div class="mt-4">
-                            <p>{{ $address[0] }}</p>
-                            <p>{{ $address[1] }}</p>
+                            <p>{{ $address['line1'] }}</p>
+                            <p>{{ join(', ', [$address['city'], $address['state']]) . ' ' . $address['zip']  . ', ' . $address['country'] }}</p>
                         </div>
                         <p class="mt-2 font-bold"><a href="mailto:{{ $email }}" class="hover:text-white hover:underline">{{ $email }}</a></p>
                         <p class="mt-2 font-bold">{{ $phone }}</p>
@@ -40,7 +40,7 @@
             
                     <div class="mt-6 sm:mt-0 pt-12 sm:pt-16 flex justify-between sm:block">
                         @foreach ($socials as $social)
-                            <a href="{{ $social['url'] }}" class="inline-block mb-6 sm:ml-6">
+                            <a href="{{ $social['url'] }}" target="_blank" rel="noopener noreferer" class="inline-block mb-6 sm:ml-6">
                                 @svg($social['platform'], 'w-10 h-10 fill-current')
                             </a>
                         @endforeach
@@ -56,3 +56,23 @@
         </div>
     </footer>
 </div>
+
+<script type="application/ld+json">{
+    "hiringOrganization" : {
+        "@type" : "Organization",
+        "name" : "{{ $company['name'] }}",
+        "sameAs" : "{{ $company['url'] }}",
+        "logo" : "{{ $company['logo'] }}"
+    },
+    "jobLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ $address['line1'] }}",
+            "addressLocality": ", {{ $address['city'] }}",
+            "addressRegion": "{{ $address['state'] }}",
+            "postalCode": "{{ $address['zip'] }}",
+            "addressCountry": "{{ $address['country'] }}"
+        }
+    }               
+}</script>

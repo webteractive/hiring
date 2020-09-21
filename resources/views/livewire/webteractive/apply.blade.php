@@ -5,6 +5,15 @@
                 <div class="container mx-auto">
                     <div class="mb-6 text-base font-sintony">
                         <h2 class="text-6xl font-bold font-sintony leading-snug tracking-wider">{{ $job['title'] }}</h2>
+                        
+                        <div class="mt-4">
+                            @foreach ($job['tags'] as $tag)
+                                <span class="border border-black bg-white inline-flex items-center leading-snug py-2 px-6 mt-2 mr-2">
+                                    {{ $tag }}
+                                </span>
+                            @endforeach
+                        </div>
+
                         <div class="mt-6">
                             @foreach ($job['description'] as $desc)
                                 <p class="mb-5 leading-relaxed">{{ $desc }}</p>
@@ -43,6 +52,22 @@
                     </div>
                 </div>
             </div>
+
+            <script type="application/ld+json">{
+                "@context": "http://schema.org",
+                "@type": "JobPosting",
+                "title": "{{ $job['title'] }}",
+                "description": "{{ join('', $job['description']) }}",
+                "datePosted": "2020-09-21T00:00:00",
+                "validThrough": "2020-09-31T00:00:00",
+                "employmentType": "FULL_TIME",
+                "jobLocationType": "TELECOMMUTE",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "name": "Webteractive",
+                    "value": "1234567"
+                }                                     
+            }</script>
         @endforeach
     </div>
 
