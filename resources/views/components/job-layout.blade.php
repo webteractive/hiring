@@ -56,23 +56,3 @@
         </div>
     </footer>
 </div>
-
-<script type="application/ld+json">{
-    "hiringOrganization" : {
-        "@type" : "Organization",
-        "name" : "{{ $company['name'] }}",
-        "sameAs" : "{{ $company['url'] }}",
-        "logo" : "{{ $company['logo'] }}"
-    },
-    "jobLocation": {
-        "@type": "Place",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "{{ $address['line1'] }}",
-            "addressLocality": ", {{ $address['city'] }}",
-            "addressRegion": "{{ $address['state'] }}",
-            "postalCode": "{{ $address['zip'] }}",
-            "addressCountry": "{{ $address['country'] }}"
-        }
-    }               
-}</script>

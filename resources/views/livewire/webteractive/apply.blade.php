@@ -53,21 +53,7 @@
                 </div>
             </div>
 
-            <script type="application/ld+json">{
-                "@context": "http://schema.org",
-                "@type": "JobPosting",
-                "title": "{{ $job['title'] }}",
-                "description": "{{ join('', $job['description']) }}",
-                "datePosted": "2020-09-21T00:00:00",
-                "validThrough": "2020-09-31T00:00:00",
-                "employmentType": "FULL_TIME",
-                "jobLocationType": "TELECOMMUTE",
-                "identifier": {
-                    "@type": "PropertyValue",
-                    "name": "Webteractive",
-                    "value": "1234567"
-                }                                     
-            }</script>
+            <script type="application/ld+json">{!! json_encode($job['jsonld']) !!}</script>
         @endforeach
     </div>
 
