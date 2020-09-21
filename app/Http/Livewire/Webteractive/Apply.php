@@ -106,60 +106,7 @@ class Apply extends Component
 
     public function getJobsProperty()
     {
-        return collect([
-            [
-                'title' => 'QA Tester',
-                'description' => [
-                    'We are looking for a QA Tester to assess software quality through manual and automated testing. You will be responsible for finding and reporting bugs and glitches. You will ensure that our products, apps, and systems work as expected.',
-                    'In this role, you should have a keen eye for detail and excellent communication skills. If you are also competent in executing test cases and are passionate about quality, we’d like to meet you.'
-                ],
-                'responsibilities' => [
-                    'Review and analyze system specifications',
-                    'Collaborate with the development team to develop effective strategies and test plans',
-                    'Execute test cases (manual or automated) and analyze results',
-                    'Evaluate code according to specifications',
-                    'Create logs to document testing phases and defects',
-                    'Report bugs and errors to the development team',
-                    'Help troubleshoot issues',
-                    'Conduct post-release/ post-implementation testing',
-                ],
-                'requirements' => [
-                    'Can code (PHP/Laravel/ExpressionEngine/WordPress/JavaScript)',
-                    'Attention to detail',
-                    'Excellent communication skills',
-                    'Ability to document and troubleshoot errors',
-                    'Familiarity with agile frameworks and regression testing is a plus'
-                ]
-            ],
-            [
-                'title' => 'Graphic Designer',
-                'description' => [
-                    'We are looking for a Graphic Designer to create engaging and on-brand graphics for a variety of media.',
-                    'Your graphics should capture the attention of those who see them and communicate the right message. For this, you need to have a creative flair and a strong ability to translate requirements into design. If you can communicate well and work methodically as part of a team, we’d like to meet you.',
-                ],
-                'responsibilities' => [
-                    'Study design briefs and determine requirements',
-                    'Conceptualize visuals based on requirements',
-                    'Prepare rough drafts and present ideas',
-                    'Develop illustrations, logos and other designs using software or by hand',
-                    'Use the appropriate colors and layouts for each graphic',
-                    'Collaborate with the development team to produce the final design',
-                    'Test graphics across various media',
-                    'Amend designs after feedback',
-                    'Ensure final graphics and layouts are visually appealing and on-brand'
-
-                ],
-                'requirements' => [
-                    'Proven graphic designing experience',
-                    'A strong portfolio of illustrations or other graphics',
-                    'Familiarity with design software and technologies (Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Adobe XD, InVision, Zeplin)',
-                    'A keen eye for aesthetics and details',
-                    'Excellent communication skills',
-                    'Ability to work methodically and meet deadlines',
-                    'Degree in Design, Fine Arts or related field is a plus',
-                ]
-            ]
-        ]);  
+        return collect(json_decode(file_get_contents(config('app.positions')), true));  
     }
 
     public function render()

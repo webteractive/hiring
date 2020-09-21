@@ -21,7 +21,7 @@ class JobApplicationSent extends Mailable
 
     public function build()
     {
-        return $this->to('webteractiveco@gmail.com', 'Jobs @ Webteractibe')
+        return $this->to(config('mail.from.address'), config('mail.from.name'))
                     ->from($this->application->email, $this->application->name)
                     ->subject('Job application for ' . $this->application->position . ' position')
                     ->markdown('emails.job-application.sent', [

@@ -20,7 +20,7 @@ class JobApplicationReceived extends Mailable
 
     public function build()
     {
-        return $this->from('webteractiveco@gmail.com', 'Webteractive')
+        return $this->from(config('mail.from.address'), config('mail.from.name'))
                     ->to($this->application->email, $this->application->name)
                     ->subject($this->application->position . ' application received')
                     ->markdown('emails.job-application.received', [

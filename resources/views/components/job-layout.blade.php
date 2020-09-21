@@ -1,10 +1,8 @@
-{{-- <div class="bg-gray-500 transform skew-y-12 absolute top-0 right-0 min-h-screen min-w-full z-0"></div> --}}
-
 <div id="app" class="font-sintony">
-    <div class="px-6 sm:py-0 z-40">
+    <div class="relative px-6 sm:py-0 z-40 overflow-hidden">
+        <x-logo class="absolute inline-block h-1280 -top-124 left-1/2 -ml-1.5 xl:-ml-1/3 text-gray-200 bottom-0 z-0" />
 
         <div class="relative container mx-auto">
-            <x-logo class="absolute inline-block h-1280 -left-380 text-gray-200 bottom-0 z-0" />
 
             <div class="relative flex items-center justify-center py-12 z-10">
                 <a href="{{ route('home') }}">
@@ -42,7 +40,7 @@
             
                     <div class="mt-6 sm:mt-0 pt-12 sm:pt-16 flex justify-between sm:block">
                         @foreach ($socials as $social)
-                            <a href="{{ $social['url'] }}" class="inline-block sm:ml-6">
+                            <a href="{{ $social['url'] }}" class="inline-block mb-6 sm:ml-6">
                                 @svg($social['platform'], 'w-10 h-10 fill-current')
                             </a>
                         @endforeach

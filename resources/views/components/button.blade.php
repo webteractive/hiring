@@ -18,7 +18,7 @@ $styles = [
   wire:target="{{ $loadingTarget }}"
   wire:loading.attr="disabled"
   type="{{ $type }}"
-  class="h-12 px-12 {{ $styles[$style ?? 'default'] }} rounded {{ $class }}"
+  class="h-12 px-12 {{ $styles[$style ?? 'default'] }} {{ $class }}"
   {{ $attributes->except(['type', 'class', 'style', 'detects-loading', 'loading-text', 'loading-target']) }}
 >
   @if ($detectsLoading)

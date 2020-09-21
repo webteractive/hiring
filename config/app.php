@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Jobs @ Webteractive',
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -229,5 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    'positions' => env('AVAILABLE_POSITIONS')
 
 ];
