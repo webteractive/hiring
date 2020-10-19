@@ -5,7 +5,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ config('app.name') }}</title>
-        <meta name="description" content="Webteractive is looking for whip-cracking QA Tester and an expert Graphics Designer. If you can communicate well and detail-oriented, we’d like to meet you.">
+        <meta name="description" content="{{ config('app.meta.desc') }}">
         <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
         <link rel="alternate icon" href="/favicon.ico">
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>

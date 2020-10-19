@@ -230,6 +230,10 @@ return [
 
     ],
 
+    'meta' => [
+        'desc' => 'Jobs @ Webteractive'
+    ],
+    'hiring' => env('HIRING', true),
     'positions' => env('AVAILABLE_POSITIONS')
 
 ];

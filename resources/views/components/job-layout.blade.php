@@ -11,10 +11,14 @@
             </div>
 
             <div class="relative h-1024 flex items-center z-50">
-                <h1 class="text-8xl sm:text-12xl font-bold font-sintony flex-1 leading-snug">
-                    <span class="tracking-tight">We're</span>
+                <h1 class="text-8xl sm:text-12xl font-bold font-sintony flex-1 leading-snug {{ config('app.hiring') ? '' : 'text-gray-700' }}">
+                    <span class="tracking-tight">
+                        We're @unless(config('app.hiring'))not @endunless
+                    </span>
                     <br>
-                    <span class="tracking-wider">Hiring</span>
+                    <span class="tracking-wider">
+                        Hiring @unless(config('app.hiring'))yet @endunless
+                    </span>
                 </h1>
             </div>
         </div>
