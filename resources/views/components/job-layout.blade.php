@@ -10,7 +10,7 @@
                 </a>
             </div>
 
-            <div class="relative h-1024 flex items-center z-50">
+            <div class="relative h-screen md:h-980 flex items-center z-50">
                 <h1 class="text-8xl sm:text-12xl font-bold font-sintony flex-1 leading-snug {{ config('app.hiring') ? '' : 'text-gray-700' }}">
                     <span class="tracking-tight">
                         We're @unless(config('app.hiring'))not @endunless
