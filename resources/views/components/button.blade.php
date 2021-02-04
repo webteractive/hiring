@@ -10,7 +10,8 @@
 @php
 $styles = [
   'default' => 'bg-black text-white hover:bg-gray-900',
-  'outlined' => 'border border-black hover:border-gray-900'
+  'outlined' => 'border border-black hover:border-gray-900',
+  'rounded' => 'bg-black text-white rounded-full hover:bg-gray-900',
 ];
 @endphp
 
@@ -18,7 +19,7 @@ $styles = [
   wire:target="{{ $loadingTarget }}"
   wire:loading.attr="disabled"
   type="{{ $type }}"
-  class="h-12 px-12 {{ $styles[$style ?? 'default'] }} {{ $class }}"
+  class="h-12 px-12 {{ $styles[$style] ?? $styles['default'] }} {{ $class }}"
   {{ $attributes->except(['type', 'class', 'style', 'detects-loading', 'loading-text', 'loading-target']) }}
 >
   @if ($detectsLoading)

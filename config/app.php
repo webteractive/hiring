@@ -234,6 +234,6 @@ return [
         'desc' => 'Jobs @ Webteractive'
     ],
     'hiring' => env('HIRING', true),
-    'positions' => env('AVAILABLE_POSITIONS')
-
+    'positions' => env('AVAILABLE_POSITIONS'),
+    'company' => env('COMPANY_DATA_PATH', storage_path('app/company.json')),
 ];
