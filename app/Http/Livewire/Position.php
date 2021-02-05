@@ -24,11 +24,21 @@ class Position extends Component
         return $this->getPosition($this->slug);
     }
 
+    public function getPerksProperty()
+    {
+        return [
+            "Competitive salary",
+            "Standard benefits (SSS, PHIC, and HDMF)",
+            "Holidays",
+            "Vacation leaves",
+            "Birthday leave"
+        ];
+    }
+
     public function getPosition($slug)
     {
         return Model::whereSlug($slug)->first();
     }
-
 
     public function render()
     {

@@ -23,7 +23,7 @@ class Position extends Model
         return collect(json_decode(file_get_contents(config('app.positions')), true))
                 ->map(function ($item) {
                     $row = [];
-                    $strings = ['title', 'slug'];
+                    $strings = ['title', 'slug', 'needed'];
 
                     foreach ($item as $key => $value) {
                         $row[$key] = in_array($key, $strings) ? $value : json_encode($value);

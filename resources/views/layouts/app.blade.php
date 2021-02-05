@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ config('app.name') }}</title>
-        <meta name="description" content="{{ config('app.meta.desc') }}">
+        @stack('meta')
         <link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
         <link rel="alternate icon" href="/favicon.ico">
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -23,27 +22,55 @@
         @application-form-closed="toggleScrolling(true)"
         class="bg-black text-white"
     >
-        <div class="relative overflow-hidden bg-white text-black">
-            <x-logo class="absolute inline-block opacity-25 h-1280 -top-124 left-1/2 -ml-1.5 xl:-ml-1/3 text-gray-200 bottom-0 z-0" />
+        <div class="relative bg-white text-black">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <x-logo class="absolute inline-block opacity-25 h-1280 -top-124 left-1/2 -ml-1.5 xl:-ml-1/3 text-gray-200 bottom-0 z-0" />
+            </div>
 
             <header class="relative z-50">
-                <div class="container mx-auto flex items-center py-2 justify-between">
+                <div class="container mx-auto flex items-center px-4 py-4 justify-between">
                     <a href="{{ route('home') }}">
                         <x-logo class="w-20" />
                     </a>
 
-                    <x-button style="rounded">
-                        {{ __('Apply Now') }}
-                    </x-button>
+                    <div x-data="{ shown: false }" class="inline-flex relative">
+                        <button
+                            @click="shown = !shown"
+                            title="{{ __('Show available poistions') }}"
+                            type="button"
+                            class="h-12 w-12 rounded-full mb-1 shadow-lg bg-gray-700 text-white hover:bg-black"
+                        >
+                            <x-icon-menu class="inline-block h-8 w-8" />
+                        </button>
+
+                        <div
+                            x-cloak
+                            x-show="shown"
+                            @click.away="shown = false"
+                            style="display: none;"
+                            class="transition-all fixed inset-0 p-8 pt-20 md:pt-8 md:absolute md:top-full md:right-0 md:left-auto md:bottom-auto w-screen min-h-screen md:w-420 md:min-h-0 rounded-xl shadow-xl bg-white z-50"
+                        >
+                            <button @click.prevent="shown = false" type="button" class="md:hidden h-10 w-10 absolute top-0 right-0 mt-6 mr-6">
+                                <x-icon-close class="inline-block h-10 w-10" />
+                            </button>
+
+                            @foreach(\App\Models\Position::all() as $position)
+                                <a
+                                    href="{{ route('position', ['slug' => $position->slug]) }}"
+                                    class="block w-full py-1 text-2xl text-gray-700 hover:text-black hover:underline"
+                                >{{ $position->title }}</a>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </header>
             
-            <main class="relative z-50">
+            <main class="relative z-40">
                 {{ $slot }}
             </main>
 
-            <footer class="bg-gray-900 relative z-50">
-                <div class="container mx-auto py-12">
+            <footer class="bg-gray-900 relative z-40">
+                <div class="container px-4 mx-auto py-12">
                     <div class="sm:flex sm:justify-between">
                         <div class="text-some-gray">
                             <h2 class="tracking-wide font-sintony font-bold text-3xl text-white">{{ __('Our office') }}</h2>
@@ -86,5 +113,7 @@
         <livewire:scripts />
 
         <script src="{{ url(mix('js/app.js')) }}"></script>
+
+        @stack('scripts')
     </body>
 </html>

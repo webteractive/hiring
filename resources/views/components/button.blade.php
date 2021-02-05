@@ -2,6 +2,7 @@
   'type' => 'button',
   'class' => '',
   'style' => 'default',
+  'size' => 'base',
   'detectsLoading' => false,
   'loadingText' => 'Working...',
   'loadingTarget' => ''
@@ -11,7 +12,12 @@
 $styles = [
   'default' => 'bg-black text-white hover:bg-gray-900',
   'outlined' => 'border border-black hover:border-gray-900',
-  'rounded' => 'bg-black text-white rounded-full hover:bg-gray-900',
+  'rounded' => 'bg-black text-white rounded-full shadow hover:bg-gray-900',
+  'rounded-outline' => 'border border-gray-700 rounded-full shadow hover:border-black',
+];
+$sizes = [
+  'base' => 'h-12 px-12',
+  'lg' => 'h-16 px-12'
 ];
 @endphp
 
@@ -19,7 +25,7 @@ $styles = [
   wire:target="{{ $loadingTarget }}"
   wire:loading.attr="disabled"
   type="{{ $type }}"
-  class="h-12 px-12 {{ $styles[$style] ?? $styles['default'] }} {{ $class }}"
+  class="{{ $sizes[$size] ?? $sizes['base'] }} {{ $styles[$style] ?? $styles['default'] }} {{ $class }}"
   {{ $attributes->except(['type', 'class', 'style', 'detects-loading', 'loading-text', 'loading-target']) }}
 >
   @if ($detectsLoading)
