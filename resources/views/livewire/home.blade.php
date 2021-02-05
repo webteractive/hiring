@@ -5,15 +5,17 @@
 
 <div>
     <div class="container mx-auto grid gap-8 px-4 xl:grid-cols-5 xl:py-16">
-        <div class="pt-16 xl:col-span-2">
-            <h1 class="text-8xl leading-none font-sintony font-bold tracking-wide">
-                {{ __('Join our team!') }}
-            </h1>
+        <div class="relative pt-16 xl:col-span-2">
+            <div class="sticky top-0">
+                <h1 class="text-8xl leading-none font-sintony font-bold tracking-wide">
+                    {{ __('Join our team!') }}
+                </h1>
 
-            <p class="mt-12 text-3xl text-gray-700 leading-snug">
-                {{ __('At Webteractive, we\'ve worked hard to build a tight-knit team of talented people.') }}
-                {{ __('We genuinely care about providing our team with a respectful, safe, and diverse environment to grow in—as professionals and individuals.') }}
-            </p>
+                <p class="mt-12 text-3xl text-gray-700 leading-snug">
+                    {{ __('At Webteractive, we\'ve worked hard to build a tight-knit team of talented people.') }}
+                    {{ __('We genuinely care about providing our team with a respectful, safe, and diverse environment to grow in—as professionals and individuals.') }}
+                </p>
+            </div>
         </div>
 
 

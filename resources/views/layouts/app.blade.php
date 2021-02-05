@@ -33,7 +33,11 @@
                         <x-logo class="w-20" />
                     </a>
 
-                    <div x-data="{ shown: false }" class="inline-flex relative">
+                    <div
+                        x-data="{ shown: false }"
+                        @scroll.window="shown = false"
+                        class="inline-flex relative"
+                    >
                         <button
                             @click="shown = !shown"
                             title="{{ __('Show available poistions') }}"
