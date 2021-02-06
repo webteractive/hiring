@@ -58,11 +58,18 @@
                                 <x-icon-close class="inline-block h-10 w-10" />
                             </button>
 
+                            <h2 class="font-syntony text-2xl text-gray-400 mb-2">{{ __('Available Positions') }}</h2>
+
                             @foreach(\App\Models\Position::all() as $position)
                                 <a
                                     href="{{ route('position', ['slug' => $position->slug]) }}"
-                                    class="block w-full py-1 text-2xl text-gray-700 hover:text-black hover:underline"
-                                >{{ $position->title }}</a>
+                                    class="block w-full py-1 text-2xl text-gray-900 hover:text-black hover:underline"
+                                >
+                                    <span>{{ $position->title }}</span>
+                                    @if($position->needed > 1)
+                                        <span>({{ $position->needed }})</span>
+                                    @endif
+                                </a>
                             @endforeach
                         </div>
                     </div>
@@ -73,7 +80,7 @@
                 {{ $slot }}
             </main>
 
-            <footer class="bg-gray-900 relative z-40">
+            <footer class="bg-gray-900 relative z-30">
                 <div class="container px-4 mx-auto py-12">
                     <div class="sm:flex sm:justify-between">
                         <div class="text-some-gray">

@@ -23,11 +23,16 @@
             <div class="py-4 grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
                 @foreach($this->positions as $position)
                     <div class="rounded-xl transition-all bg-gray-100 group shadow-lg cursor-pointer hover:shadow-xl">
-                        <img
-                            src="{{ asset("image/{$position->slug}-400x280.png") }}"
-                            alt="{{ $position->title }} banner"
-                            class="w-full object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
-                        />
+                        <a
+                            href="{{ route('position', ['slug' => $position->slug]) }}"
+                            class="block w-full min-h-220px"
+                        >
+                            <img
+                                src="{{ asset("image/{$position->slug}-400x280.png") }}"
+                                alt="{{ $position->title }} banner"
+                                class="w-full object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
+                            />
+                        </a>
 
                         <div class="p-4 rounded-b">
                             <h2 class="text-gray-700 font-sintony font-bold text-2xl text-center group-hover:text-black">
