@@ -1,5 +1,11 @@
 @tailwind base;
 @tailwind components;
+
+code.laravel {
+    color: #ff2d20;
+    font-size: theme('fontWeight.light');
+}
+
 @tailwind utilities;
 
 .smooth-scrolling {

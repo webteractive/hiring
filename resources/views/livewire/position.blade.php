@@ -62,7 +62,7 @@
                         @foreach($this->position->responsibilities as $item)
                             <div class="text-2xl mb-2 flex group text-gray-700">
                                 <span class="mr-1 text-3xl -mt-1 group-hover:text-green-500">&plus;</span>
-                                <span class="group-hover:text-black">{{ $item }}</span>
+                                <span class="group-hover:text-black">{!! $item !!}</span>
                             </div>
                         @endforeach
                     </div>
@@ -72,7 +72,7 @@
                         @foreach($this->position->requirements as $item)
                             <div class="text-2xl mb-2 flex group text-gray-700">
                                 <span class="mr-1 text-3xl -mt-1 group-hover:text-green-500">&plus;</span>
-                                <span class="group-hover:text-black">{{ $item }}</span>
+                                <span class="group-hover:text-black">{!! $item !!}</span>
                             </div>
                         @endforeach
                     </div>
@@ -82,7 +82,7 @@
                         @foreach($this->perks as $item)
                             <div class="text-2xl mb-2 flex group text-gray-700">
                                 <span class="mr-1 text-3xl -mt-1 group-hover:text-green-500">&plus;</span>
-                                <span class="group-hover:text-black">{{ $item }}</span>
+                                <span class="group-hover:text-black">{!! $item !!}</span>
                             </div>
                         @endforeach
                     </div>
