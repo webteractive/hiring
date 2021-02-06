@@ -25,6 +25,7 @@ module.exports = {
             },
 
             height: {
+                '400': '400px',
                 '980': '980px',
                 '1024': '1024px',
                 '1280': '1280px',
@@ -32,6 +33,7 @@ module.exports = {
             },
 
             width: {
+                '420': '420px',
                 '980': '980px'
             },
 
@@ -44,7 +46,10 @@ module.exports = {
 
             minHeight: {
                 '50vh': '50vh',
-                '75vh': '75vh'
+                '75vh': '75vh',
+                '220px': '220px',
+                '280px': '280px',
+                '400px': '400px',
             },
 
             colors: {

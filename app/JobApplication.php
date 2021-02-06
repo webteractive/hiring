@@ -19,7 +19,7 @@ class JobApplication
 
   public function attach($resume)
   {
-    $this->resume = $resume;    
+    $this->resume = $resume;
     return $this;
   }
 
@@ -34,5 +34,4 @@ class JobApplication
     $this->position = $position;
     return $this;
   }
-
 }
