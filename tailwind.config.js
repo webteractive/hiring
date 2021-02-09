@@ -53,7 +53,10 @@ module.exports = {
             },
 
             colors: {
-                'some-gray': '#9C9CAA'
+                'some-gray': '#9C9CAA',
+                'twitter': '#1da1f2',
+                'facebook': '#4267B2',
+                'linkedin': '#2867b2'
             }
         },
     },

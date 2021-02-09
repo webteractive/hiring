@@ -1,6 +1,9 @@
 @push('meta')
     <title>{{ $this->position->title }} | {{ config('app.name') }}</title>
     <meta name="description" content="{{ $this->position->jsonld['description'] }}">
+    <meta property="og:title" content="{{ $this->position->title }}" />
+    <meta property="og:description" content="{{ $this->position->jsonld['description'] }}" />
+    <meta property="og:image" content="{{ url($this->position->banner) }}" />
 @endpush
 
 <div class="relative transition-all">
@@ -39,10 +42,10 @@
 
 
         <div class="lg:col-span-3 xl:col-span-3 mt-0 xl:mt-8">
-            <div class="rounded-xl transition-all bg-gray-100 bg-opacity-50 shadow-lg my-8 pb-16">
+            <div class="rounded-xl transition-all bg-gray-100 bg-opacity-50 shadow-lg my-8">
                 <div class="relative overflow-hidden bg-gray-200 bg-opacity-75 rounded-t-xl">
                     <img
-                        src="{{ $this->position->banner }}"
+                        src="{{ url($this->position->banner) }}"
                         alt="{{ $this->position->title }} banner"
                         class="w-full h-400 object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
                     />
@@ -85,6 +88,48 @@
                                 <span class="group-hover:text-black">{!! $item !!}</span>
                             </div>
                         @endforeach
+                    </div>
+
+                    <div class="mt-12">
+                        <h2 class="text-xl font-bold mb-2 text-gray-600">{{ __('Share') }}</h2>
+                        @php
+                            $shareableUrl = urlencode(route('position', ['slug' => $this->position->slug]))
+                        @endphp
+
+                        <ul class="flex">
+                            <li class="mr-2">
+                                <a
+                                    href="https://www.facebook.com/sharer.php?u={{ $shareableUrl }}"
+                                    target="blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center justify-center w-10 h-10 shadow rounded-full bg-black hover:bg-facebook"
+                                >
+                                    <x-icon-facebook class="inline-block w-4 h-4" />
+                                </a>
+                            </li>
+
+                            {{-- <li class="mx-1">
+                                <a
+                                    href="https://twitter.com/intent/tweet?url{{ $shareableUrl }}&text={{ urlencode($this->position->title) }}"
+                                    target="blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center justify-center w-10 h-10 shadow rounded-full bg-black hover:bg-twitter"
+                                >
+                                    <x-icon-twitter class="inline-block w-4 h-4" />
+                                </a>
+                            </li> --}}
+
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/sharing/share-offsite/?url={{ $shareableUrl }}"
+                                    target="blank"
+                                    rel="noopener noreferrer"
+                                    class="inline-flex items-center justify-center w-10 h-10 shadow rounded-full bg-black hover:bg-linkedin"
+                                >
+                                    <x-icon-linkedin class="inline-block w-4 h-4" />
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
