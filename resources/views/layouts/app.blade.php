@@ -80,7 +80,7 @@
                 {{ $slot }}
             </main>
 
-            <footer class="bg-gray-900 relative z-30">
+            <footer class="bg-gray-900 relative z-30 mt-8">
                 <div class="container px-4 mx-auto py-12">
                     <div class="sm:flex sm:justify-between">
                         <div class="text-some-gray">
