@@ -30,8 +30,7 @@ class Position extends Component
             "Competitive salary",
             "Standard benefits (SSS, PHIC, and HDMF)",
             "Holidays",
-            "Vacation leaves",
-            "Birthday leave"
+            "Paid leaves"
         ];
     }
 

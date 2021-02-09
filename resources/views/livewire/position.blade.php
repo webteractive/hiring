@@ -42,7 +42,7 @@
             <div class="rounded-xl transition-all bg-gray-100 bg-opacity-50 shadow-lg my-8 pb-16">
                 <div class="relative overflow-hidden bg-gray-200 bg-opacity-75 rounded-t-xl">
                     <img
-                        src="{{ asset($this->position->banner) }}"
+                        src="{{ $this->position->banner }}"
                         alt="{{ $this->position->title }} banner"
                         class="w-full h-400 object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
                     />
