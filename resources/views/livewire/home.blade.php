@@ -28,7 +28,7 @@
                             class="block w-full min-h-220px"
                         >
                             <img
-                                src="{{ asset("image/{$position->slug}-400x280.png") }}"
+                                src="{{ asset($position->thumbnail) }}"
                                 alt="{{ $position->title }} banner"
                                 class="w-full object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
                             />
