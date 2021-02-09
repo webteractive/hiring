@@ -42,7 +42,7 @@
 
 
         <div class="lg:col-span-3 xl:col-span-3 mt-0 xl:mt-8">
-            <div class="rounded-xl transition-all bg-gray-100 bg-opacity-50 shadow-lg my-8">
+            <div class="rounded-xl transition-all bg-gray-100 bg-opacity-50 shadow-lg my-8 pb-16">
                 <div class="relative overflow-hidden bg-gray-200 bg-opacity-75 rounded-t-xl">
                     <img
                         src="{{ url($this->position->banner) }}"
