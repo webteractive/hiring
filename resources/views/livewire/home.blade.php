@@ -28,7 +28,7 @@
                             class="block w-full min-h-220px"
                         >
                             <img
-                                src="{{ url($position->thumbnail) }}"
+                                src="{{ url($position->thumbnail) . '?=id' . config('app.static_asset_hash') }}"
                                 alt="{{ $position->title }} banner"
                                 class="w-full object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
                             />

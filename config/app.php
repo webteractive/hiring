@@ -236,4 +236,5 @@ return [
     'hiring' => env('HIRING', true),
     'positions' => env('AVAILABLE_POSITIONS'),
     'company' => env('COMPANY_DATA_PATH', storage_path('app/company.json')),
+    'static_asset_hash' => env('STATIC_ASSET_HASH')
 ];

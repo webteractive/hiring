@@ -45,7 +45,7 @@
             <div class="rounded-xl transition-all bg-gray-100 bg-opacity-50 shadow-lg my-8">
                 <div class="relative overflow-hidden bg-gray-200 bg-opacity-75 rounded-t-xl">
                     <img
-                        src="{{ url($this->position->banner) }}"
+                        src="{{ url($this->position->banner) . '?=id' . config('app.static_asset_hash') }}"
                         alt="{{ $this->position->title }} banner"
                         class="w-full h-400 object-cover rounded-t-xl z-0 text-gray-200 text-xs text-center"
                     />
