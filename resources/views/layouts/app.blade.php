@@ -33,46 +33,48 @@
                         <x-logo class="w-20" />
                     </a>
 
-                    <div
-                        x-data="{ shown: false }"
-                        @scroll.window="shown = false"
-                        class="inline-flex relative"
-                    >
-                        <button
-                            @click="shown = !shown"
-                            title="{{ __('Show available poistions') }}"
-                            type="button"
-                            class="h-12 w-12 rounded-full mb-1 shadow-lg bg-gray-700 text-white hover:bg-black"
-                        >
-                            <x-icon-menu class="inline-block h-8 w-8" />
-                        </button>
-
+                    @if(config('app.hiring'))
                         <div
-                            x-cloak
-                            x-show="shown"
-                            @click.away="shown = false"
-                            style="display: none;"
-                            class="transition-all fixed inset-0 p-8 pt-20 md:pt-8 md:absolute md:top-full md:right-0 md:left-auto md:bottom-auto w-screen min-h-screen md:w-420 md:min-h-0 rounded-xl shadow-xl bg-white z-50"
+                            x-data="{ shown: false }"
+                            @scroll.window="shown = false"
+                            class="inline-flex relative"
                         >
-                            <button @click.prevent="shown = false" type="button" class="md:hidden h-10 w-10 absolute top-0 right-0 mt-6 mr-6">
-                                <x-icon-close class="inline-block h-10 w-10" />
+                            <button
+                                @click="shown = !shown"
+                                title="{{ __('Show available poistions') }}"
+                                type="button"
+                                class="h-12 w-12 rounded-full mb-1 shadow-lg bg-gray-700 text-white hover:bg-black"
+                            >
+                                <x-icon-menu class="inline-block h-8 w-8" />
                             </button>
 
-                            <h2 class="font-syntony text-2xl text-gray-400 mb-2">{{ __('Available Positions') }}</h2>
+                            <div
+                                x-cloak
+                                x-show="shown"
+                                @click.away="shown = false"
+                                style="display: none;"
+                                class="transition-all fixed inset-0 p-8 pt-20 md:pt-8 md:absolute md:top-full md:right-0 md:left-auto md:bottom-auto w-screen min-h-screen md:w-420 md:min-h-0 rounded-xl shadow-xl bg-white z-50"
+                            >
+                                <button @click.prevent="shown = false" type="button" class="md:hidden h-10 w-10 absolute top-0 right-0 mt-6 mr-6">
+                                    <x-icon-close class="inline-block h-10 w-10" />
+                                </button>
 
-                            @foreach(\App\Models\Position::all() as $position)
-                                <a
-                                    href="{{ route('position', ['slug' => $position->slug]) }}"
-                                    class="block w-full py-1 text-2xl text-gray-900 hover:text-black hover:underline"
-                                >
-                                    <span>{{ $position->title }}</span>
-                                    @if($position->needed > 1)
-                                        <span>({{ $position->needed }})</span>
-                                    @endif
-                                </a>
-                            @endforeach
+                                <h2 class="font-syntony text-2xl text-gray-400 mb-2">{{ __('Available Positions') }}</h2>
+
+                                @foreach(\App\Models\Position::all() as $position)
+                                    <a
+                                        href="{{ route('position', ['slug' => $position->slug]) }}"
+                                        class="block w-full py-1 text-2xl text-gray-900 hover:text-black hover:underline"
+                                    >
+                                        <span>{{ $position->title }}</span>
+                                        @if($position->needed > 1)
+                                            <span>({{ $position->needed }})</span>
+                                        @endif
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </header>
             

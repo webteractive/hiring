@@ -1,6 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+    mode: 'jit',
+    darkMode: 'media',
     theme: {
         extend: {
             fontFamily: {
@@ -61,26 +63,13 @@ module.exports = {
         },
     },
     variants: {
-        cursor: ['responsive', 'hover', 'focus'],
+        extends: {}
     },
-    purge: {
-        content: [
-            './app/**/*.php',
-            './resources/**/*.html',
-            './resources/**/*.js',
-            './resources/**/*.jsx',
-            './resources/**/*.ts',
-            './resources/**/*.tsx',
-            './resources/**/*.php',
-            './resources/**/*.vue',
-            './resources/**/*.twig',
-            './storage/framework/views/*.php',
-            './resources/views/**/*.blade.php'
-        ],
-        options: {
-            defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
-            whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
-        },
-    },
+    purge: [
+        './app/**/*.php',
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
     plugins: [],
 };
