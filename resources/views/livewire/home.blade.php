@@ -19,8 +19,7 @@
             </div>
         </div>
 
-
-        <div class="xl:col-span-3">
+        <div class="xl:col-span-3 {{ $this->positions->count() == 2 ? 'flex items-center' : '' }}">
             <div class="py-4 grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
                 @foreach($this->positions as $position)
                     <div class="rounded-xl transition-all bg-gray-100 group shadow-lg cursor-pointer hover:shadow-xl">
