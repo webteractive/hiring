@@ -29,8 +29,11 @@ class Position extends Component
         return [
             "Competitive salary",
             "Standard benefits (SSS, PHIC, and HDMF)",
+            "13th month pay",
+            "Performance bonus",
             "Holidays",
-            "Paid leaves"
+            "Paid leaves (upon regularization)",
+            "HMO (upon regularization)"
         ];
     }
 
