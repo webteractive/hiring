@@ -95,8 +95,10 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
                                     <div class="ml-2">
-                                        <p>{{ app('company')->addressLine1() }}</p>
-                                        <p>{{ join(', ', [app('company')->address('city'), app('company')->address('state')]) . ' ' . app('company')->address('zip')  . ', ' . app('company')->address('country') }}</p>
+                                        <a class="inline-block hover:text-white hover:underline" href="https://goo.gl/maps/4jWY7QQgJcSsJoCN6">
+                                            {{ app('company')->addressLine1() }}<br>
+                                            {{ join(', ', [app('company')->address('city'), app('company')->address('state')]) . ' ' . app('company')->address('zip')  . ', ' . app('company')->address('country') }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>

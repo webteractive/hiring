@@ -60,15 +60,20 @@
                 </div>
 
                 <div class="p-4">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-2">{{ __('Responsibilities') }}</h2>
-                        @foreach($this->position->responsibilities as $item)
-                            <div class="text-2xl mb-2 flex group text-gray-700">
-                                <span class="mr-1 text-3xl -mt-1 group-hover:text-green-500">&plus;</span>
-                                <span class="group-hover:text-black">{!! $item !!}</span>
-                            </div>
-                        @endforeach
-                    </div>
+                    @php
+                        $responsibilities = collect($this->position->responsibilities);
+                    @endphp
+                    @if ($responsibilities->isNotEmpty())
+                        <div class="responsibilities">
+                            <h2 class="text-3xl font-bold mb-2">{{ __('Responsibilities') }}</h2>
+                            @foreach($responsibilities as $item)
+                                <div class="text-2xl mb-2 flex group text-gray-700">
+                                    <span class="mr-1 text-3xl -mt-1 group-hover:text-green-500">&plus;</span>
+                                    <span class="group-hover:text-black">{!! $item !!}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
 
                     <div class="mt-10">
                         <h2 class="text-3xl font-bold mb-2">{{ __('Requirements') }}</h2>
